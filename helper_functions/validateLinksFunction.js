@@ -1,6 +1,6 @@
 import { expect } from "@playwright/test";
 
-// Callback function for validating if the links in an array of objects of posts from a site are all working properly
+// Function for validating if the links in an array of objects of posts from a site are all working properly
 const validateLinks = async (articles, page) => {
     for (let article of articles) {
         try {
