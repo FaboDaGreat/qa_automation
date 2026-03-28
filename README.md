@@ -1,12 +1,12 @@
 # Hacker News Newest Articles Validation
 
-This project is an end‑to‑end Playwright test that validates **Hacker News’s `/newest` page** to ensure that the **first N articles (default: 100) are sorted from newest to oldest**.
+This project is an end‑to‑end Playwright test that validates **Hacker News’ `/newest` page** to ensure that the **first N articles (default: 100) are sorted from newest to oldest**.
 
 It was originally built as a take‑home assignment and has since been refined into a **portfolio‑grade QA automation project**, emphasizing correctness, robustness, and explicit testing intent.
 
 ---
 
-## 🎯 What This Project Demonstrates
+## What This Project Demonstrates
 
 * Strong **DOM reasoning** grounded in real system behavior
 * Pagination handling without brittle assumptions
@@ -20,7 +20,7 @@ This is not just a “does it work” test — it is designed to **fail loudly a
 
 ---
 
-## 🧠 Core Testing Strategy
+## Core Testing Strategy
 
 This project validates article ordering using **two independent signals**, intentionally layered to increase confidence and reduce false positives.
 
@@ -67,25 +67,25 @@ The ID‑based invariant remains the authoritative signal; the timestamp check e
 
 ---
 
-## 🧪 What the Test Validates
+## What the Test Validates
 
-✔ Successful navigation to the `/newest` page
+* Successful navigation to the `/newest` page
 
-✔ Pagination continues until the required number of articles is collected
+* Pagination continues until the required number of articles is collected
 
-✔ Exactly the configured number of articles are validated
+* Exactly the configured number of articles are validated
 
-✔ No duplicate articles are collected across pagination
+* No duplicate articles are collected across pagination
 
-✔ Articles are ordered **newest → oldest** by numeric ID (primary invariant)
+* Articles are ordered **newest → oldest** by numeric ID (primary invariant)
 
-✔ Articles are ordered **newest → oldest** by visible timestamp text (secondary cross-check)
+* Articles are ordered **newest → oldest** by visible timestamp text (secondary cross-check)
 
-✔ All article links return successful HTTP responses
+* All article links return successful HTTP responses
 
 ---
 
-## 🧩 Tech Stack
+## Tech Stack
 
 * **Playwright** (JavaScript)
 * **Node.js v20+**
@@ -93,7 +93,7 @@ The ID‑based invariant remains the authoritative signal; the timestamp check e
 
 ---
 
-## ▶️ Running the Test
+## Running the Test
 
 ### Install dependencies
 
@@ -109,7 +109,7 @@ npx playwright test --headed
 
 ---
 
-## 🛡️ Defensive Checks Included
+## Defensive Checks Included
 
 * Ensures no duplicate article IDs are collected
 * Validates numeric ordering invariants explicitly
@@ -119,7 +119,7 @@ npx playwright test --headed
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── helper_functions/
@@ -133,7 +133,7 @@ npx playwright test --headed
 
 ---
 
-## 🔍 Design Decisions & Tradeoffs
+## Design Decisions & Tradeoffs
 
 This project intentionally avoids relying on a single signal to validate ordering.
 
@@ -159,7 +159,7 @@ For these reasons, ID ordering is treated as the **authoritative signal**, while
 
 ---
 
-## 💡 Why This Matters
+## Why This Matters
 
 This project reflects how I approach QA engineering:
 
